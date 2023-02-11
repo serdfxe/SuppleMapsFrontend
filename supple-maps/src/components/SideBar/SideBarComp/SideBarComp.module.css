@@ -1,0 +1,14 @@
+.def {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 11px;
+    gap: 11px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    text-decoration: none;
+    color: var(--g5);
+}

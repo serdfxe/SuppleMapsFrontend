@@ -1,0 +1,10 @@
+.def {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 20%;
+
+    box-sizing: border-box;
+}

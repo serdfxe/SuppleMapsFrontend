@@ -1,0 +1,27 @@
+.default {
+    border-radius: var(--d1);
+    border: 1px solid var(--g10);
+    background-color: var(--dark);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: var(--d1) var(--d2);
+
+    cursor: pointer;
+
+    color: var(--bg);
+
+    box-sizing: border-box;
+}
+
+.rounded {
+    border-radius: var(--d4);
+}
+
+.empty {
+    border: 1px solid var(--g10);
+    background-color: transparent;
+    color: var(--dark);
+}

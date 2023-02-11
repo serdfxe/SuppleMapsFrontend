@@ -1,0 +1,9 @@
+.def {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 18px;
+
+    width: 50%;
+}
