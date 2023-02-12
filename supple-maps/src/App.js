@@ -4,6 +4,9 @@ import HomePage from './HomePage';
 
 import GlobalStyles from './GlobalStyles';
 import Article from './Pages/art/Article/Article';
+import MainPage from './Pages/MainPage/MainPage';
+
+
 
 function App() {
   return (
@@ -14,9 +17,10 @@ function App() {
           <Route path="app">
             <Route path="" element={<Navigate to="map" />}/>
             <Route path="map" element={<HomePage/>} />
-            <Route path="main" element={<HomePage/>} />
+            <Route path="main" element={<MainPage/>} />
             <Route path="account" element={<HomePage/>} />
-            <Route path="art" element={<Article/>} />
+            <Route path="art" element={<Navigate to="/app/main"/>} />
+            <Route path="art/:art_id" element={<Article/>} />
             <Route path="static_path" element={<HomePage/>} />
             <Route path="search" element={<HomePage/>} />
             <Route path="history" element={<HomePage/>} />
