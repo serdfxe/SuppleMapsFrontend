@@ -1,0 +1,24 @@
+.wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 var(--d2);
+    gap: var(--d1);
+
+    border: 1px solid var(--dark);
+    border-radius: var(--d1);
+
+    width: -webkit-fill-available;
+}
+
+.wrap input, .wrap input:focus, .wrap input:focus-visible, .wrap input:focus-within, .wrap input:active {
+    border: none;
+    padding: 13.5px 0;
+    
+    font-weight: 400;
+    font-size: var(--d1);
+
+    color: var(--g5);
+
+    outline: none;
+}
