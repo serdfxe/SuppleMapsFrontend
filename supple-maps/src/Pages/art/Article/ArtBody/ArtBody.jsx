@@ -28,6 +28,8 @@ const ArtBody = ({art_id}) => {
 
             setArt_info(data);
         });
+
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }, [art_id]);
 
     return (

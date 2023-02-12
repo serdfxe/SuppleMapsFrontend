@@ -32,6 +32,10 @@ body {
   background-color: var(--g2);
 }
 
+body::-webkit-scrollbar {
+  width: 0;
+}
+
 h1, h2, h3 {
   font-family: 'Montserrat';
   font-style: normal;

@@ -7,8 +7,12 @@ import PoiLink from './PoiLink/PoiLink';
 
 import classes from './RandArts.module.css';
 
+import {useLocation} from "react-router-dom";
+
+
 const RandArts = ({amount}) => {
     const [data, setData] = useState(null);
+    const location = useLocation();
 
     useEffect(() => {
         fetch(api_url + "/rand_pois/" + amount)
@@ -20,10 +24,10 @@ const RandArts = ({amount}) => {
                 <PoiLink key={i+"_dsfsdf"} id={data[i].id} image={data[i].image} url={"/app/art/"+data[i].id} name={data[i].name} type={data[i].type}/>
             ));
         });
-    }, [amount]);
+    }, [amount, location]);
 
     return (
-        <Block>
+        <Block  key={window.location.pathname}>
             <h2 className={classes.header}>Другие места</h2>
             {data}
         </Block>
