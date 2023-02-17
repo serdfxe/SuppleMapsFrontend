@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from '../../Page';
+import Page from '../../Page/Page';
 
 import Block from '../../components/ui/Block/Block';
 import RandArts from '../../components/RandArts/RandArts';

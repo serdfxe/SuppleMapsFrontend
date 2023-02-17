@@ -3,7 +3,7 @@ import classes from "./Block.module.css";
 
 const Block = ({children, fit=false, ...props}) => {
     return (
-        <div className={classes.def} style={ Object.assign({}, {width: fit ? "fit-content" : "100%"}, props.style)}>
+        <div className={classes.def + " " + props.className} style={ Object.assign({}, {width: fit ? "fit-content" : "100%"}, props.style)}>
             {children}
         </div>
     );

@@ -14,6 +14,8 @@
 .wrap input, .wrap input:focus, .wrap input:focus-visible, .wrap input:focus-within, .wrap input:active {
     border: none;
     padding: 13.5px 0;
+
+    width: 100%;
     
     font-weight: 400;
     font-size: var(--d1);

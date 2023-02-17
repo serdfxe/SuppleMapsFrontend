@@ -1,0 +1,27 @@
+.btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: var(--d1) 0px;
+    gap: var(--d2);
+}
+
+.info_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--d2);
+    gap: var(--d1);
+}
+
+.info {
+    display: flex;
+    padding: 0;
+    gap: 0;
+}
+
+.info > img {
+    width: 100%;
+    border-radius: var(--d1) var(--d1) 0 0;
+}

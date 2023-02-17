@@ -15,7 +15,7 @@ const RandArts = ({amount}) => {
     const location = useLocation();
 
     useEffect(() => {
-        fetch(api_url + "/rand_pois/" + amount)
+        fetch(api_url + "/api/rand_pois/" + amount)
         .then((response) => response.json())
         .then((data) => {
             console.log(data)

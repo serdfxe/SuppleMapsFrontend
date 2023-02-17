@@ -1,0 +1,23 @@
+.default {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: var(--d1) var(--d2);
+
+    cursor: pointer;
+
+    color: var(--g5);
+
+    box-sizing: border-box;
+
+    font-weight: 500;
+}
+
+.default:hover {
+    color: var(--g10);
+}

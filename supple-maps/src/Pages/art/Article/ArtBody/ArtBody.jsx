@@ -19,7 +19,7 @@ const ArtBody = ({art_id}) => {
     }
 
     useEffect(() => {
-        fetch(api_url + "/art/" + art_id)
+        fetch(api_url + "/api/art/" + art_id)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);

@@ -21,6 +21,7 @@ html {
   --g3: #9D9D9D;
   --g2: #EBEBEB;
   --dark: #1A1A1A;
+  --red: #D74040;
 }
 
 body {
@@ -30,6 +31,16 @@ body {
   font-family: "Montserrat";
 
   background-color: var(--g2);
+
+  min-height: 100vh;
+
+  -moz-user-select: none; -khtml-user-select: none; user-select: none;
+}
+
+.App {
+  z-index: 100;
+  position: relative;
+  pointer-events: none;
 }
 
 body::-webkit-scrollbar {
