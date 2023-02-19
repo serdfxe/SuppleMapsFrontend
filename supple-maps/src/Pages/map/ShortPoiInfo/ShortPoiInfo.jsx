@@ -8,7 +8,7 @@ import api_url from '../../../config';
 
 import classes from './ShortPoiInfo.module.css';
 
-const ShortPoiInfo = () => {
+const ShortPoiInfo = ({...props}) => {
     const [poi_id, setPoi_id] = useState(null);
     const [poi, setPoi] = useState({name: "", description: "", images: []});
 
@@ -32,6 +32,14 @@ const ShortPoiInfo = () => {
         })
     }, [poi_id]);
 
+    function add_to_path() {
+        fetch(api_url + '/router/add/' + poi_id, {method: "POST", headers: {
+            Authorization: 'Bearer ' + props.token
+          }})
+          .then(resp => window.update_router())
+    }
+
+
     return (
         <>
             {poi_id !== null ? 
@@ -42,10 +50,10 @@ const ShortPoiInfo = () => {
                     <h2>{poi.description}</h2>
                     <div className={classes.btns}>
                         <Button rounded empty onClick={() => navigate("/app/art/" + poi_id)}><h3>Читать далее...</h3></Button>
-                        <Button rounded><h3>+ Добавить в маршрут</h3></Button>
+                        <Button rounded onClick={add_to_path}><h3>+ Добавить в маршрут</h3></Button>
                     </div>
                 </div>
-            </Block> : ''}
+            </Block> : ''}  
         </>
     );
 };

@@ -1,0 +1,29 @@
+.head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: var(--d2);
+    gap: var(--d2);
+
+    border-bottom: 1px solid var(--g5);
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+.head > svg {
+    cursor: pointer;
+} 
+
+.head h1 {
+    width: fit-content;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--d2);
+
+    width: -webkit-fill-available;
+}

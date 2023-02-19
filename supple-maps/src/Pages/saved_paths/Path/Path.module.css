@@ -1,0 +1,51 @@
+.path_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--d2);
+
+    height: -webkit-fill-available;
+
+    overflow-y  : scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+}   
+
+.path_wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.g_wrap {
+    /* height: 350px; */
+}
+
+.g_wrap img {
+    border-radius: var(--d1);
+    width: 30%;
+    height: 350px;
+    object-fit: cover;
+}  
+
+.info_wrap {
+    display: flex;
+    flex-direction: column;
+
+    /* height: calc(350px - 50px); */
+    height: 350px;
+    gap: 11px;
+
+    width: -webkit-fill-available;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.btns > button {
+    width: -webkit-fill-available;
+}

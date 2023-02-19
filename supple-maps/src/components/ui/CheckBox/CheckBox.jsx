@@ -8,7 +8,7 @@ const CheckBox = ({children, ...props}) => {
     
     return (
         <div className={classes.def}>
-            <input type="checkbox" className={classes.box}/>
+            <input type="checkbox" className={classes.box} {...props}/>
             {children}
         </div>
     );

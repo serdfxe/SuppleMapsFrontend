@@ -6,7 +6,7 @@ const Input = ({children, ...props}) => {
     return (
         <div className={classes.wrap} style={props.wrap_style}>
             {children}
-            <input type="text" {...props}></input>
+            <input type="text" style={props.style} {...props}></input>
         </div>
     );
 };

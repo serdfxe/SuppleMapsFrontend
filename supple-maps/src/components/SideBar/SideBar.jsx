@@ -9,14 +9,24 @@ import classes from "./SideBar.module.css";
 import logo from './logo.svg';
 
 const SideBar = ({...props}) => {
+    // const components = [
+    //     ["Главная", "main"],
+    //     ["Личный кабинет", "account"],
+    //     ["Карта", "map"],
+    //     ["Поиск", "search"],
+    //     ["Статические пути", "static_path"],
+    //     ["Настройки", "settings"],
+    //     ["История", "history"],
+    // ]
+
     const components = [
         ["Главная", "main"],
-        ["Личный кабинет", "account"],
+        ["Поиск", "search"], 
         ["Карта", "map"],
-        ["Поиск", "search"],
-        ["Статические пути", "static_path"],
-        ["Настройки", "settings"],
+        ["Личный кабинет", "account"],
+        ["Сохранённые пути", "saved_paths"],
         ["История", "history"],
+        ["Настройки", "settings"],
     ]
 
     return (
