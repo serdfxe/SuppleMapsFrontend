@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
 import Block from '../../../components/ui/Block/Block';
 import Button from '../../../components/ui/Button/Button';
@@ -12,12 +13,21 @@ import PoiInHist from './PoiInHist/PoiInHist';
 const Path = ({hist, ...props}) => {
     const [path, setPath] = useState([]);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         setPath(
             hist.path.map((p, i) =>
             <PoiInHist token={props.token} poi_id={p} key={i + "_hist_"}/>
         ));
     }, []);
+
+    function show_path() {
+        fetch(api_url + "/router/loadsaved/" + hist.id, {method: "POST", headers: {
+            Authorization: 'Bearer ' + props.token
+          }})
+        .then(data => navigate("/app/map/"))
+    }
 
 
     return (
@@ -30,7 +40,7 @@ const Path = ({hist, ...props}) => {
                     </div>
                     <div className={classes.btns}>
                         <Button rounded empty>Поделиться</Button>
-                        <Button rounded><h3>Просмотреть</h3></Button>
+                        <Button rounded onClick={show_path}><h3>Просмотреть</h3></Button>
                     </div>
                 </div>
                 

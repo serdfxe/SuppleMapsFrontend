@@ -24,7 +24,7 @@ const HistoryList = ({...props}) => {
 
             setList(
                 data.map((h, i) =>
-                <Path hist={h}/>
+                <Path token={props.token} hist={h}/>
                 // <Path poi_list={h.path} image={h.image} len={p.length} full_time={}/>
             ));
         })

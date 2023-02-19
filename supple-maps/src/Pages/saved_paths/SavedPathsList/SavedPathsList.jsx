@@ -24,7 +24,7 @@ const SavedPathsList = ({...props}) => {
 
             setList(
                 data.map((h, i) =>
-                <Path hist={h}/>
+                <Path hist={h} token={props.token}/>
                 // <Path poi_list={h.path} image={h.image} len={p.length} full_time={}/>
             ));
         })

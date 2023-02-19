@@ -19,12 +19,15 @@ const PoiInPath = ({poi_id, number, ...props}) => {
     }, [poi_id, props.token]);
 
     function delete_poi_from_path(id) {
+        
         fetch(api_url + "/router/del/" + id, {method: "POST", headers: {
             Authorization: 'Bearer ' + props.token
         }})
         .then(resp => {
+            if (window.router_state !== 'editing') {
+                window.update_map()
+            }
             window.update_router()
-            window.update_map()
         })
     }
     

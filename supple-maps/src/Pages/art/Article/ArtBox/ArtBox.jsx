@@ -6,10 +6,21 @@ import Block from '../../../../components/ui/Block/Block';
 import Button from '../../../../components/ui/Button/Button';
 import api_url from '../../../../config';
 import Search from '../../../../components/Search/Search';
+import { useNavigate } from 'react-router';
 ;
 
-const ArtBox = ({art_id}) => {
+const ArtBox = ({art_id, ...props}) => {
     const [images, setImages] = useState(null);
+
+    const navigate = useNavigate();
+
+
+    function add_to_path() {
+        fetch(api_url + '/router/add/' + art_id, {method: "POST", headers: {
+            Authorization: 'Bearer ' + props.token
+          }})
+          .then(resp => navigate("/app/map/"))
+    }
 
     useEffect(() => {
         fetch(api_url + "/api/art_images/" + art_id)
@@ -33,7 +44,7 @@ const ArtBox = ({art_id}) => {
 
             <div className={classes.btns}>
                 <Button rounded empty><h3>Поделиться</h3></Button>
-                <Button rounded><h3>+ Добавить в маршрут</h3></Button>
+                <Button rounded onClick={add_to_path}><h3>+ Добавить в маршрут</h3></Button>
             </div>
         </Block>
     );

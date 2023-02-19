@@ -47,6 +47,8 @@ const MapSide = ({...props}) => {
         })
     }
 
+    window.router_state = router.state;
+
     function build_path() {
         fetch(api_url + "/router/build", {method: "POST", body: JSON.stringify({"dur_of_visit": dur, "time_limit": islimit ? time_limit >= 10 && time_limit <= 100000 ? time_limit : 100000 : 100000}), headers: {
             Authorization: "Bearer " + props.token,
@@ -105,9 +107,9 @@ const MapSide = ({...props}) => {
                 <div className={classes.cheks_wrap}>
                     <CheckBox value={dur} onChange={e => setDur(e.target.checked)}><h3>Учитывать время посещения</h3></CheckBox>
                     <CheckBox value={islimit} onChange={e => setIslimit(e.target.checked)}><h3>Ограничение по времени</h3></CheckBox>
-                    {!islimit ? "" : <input min="10" max="10000" type="number" value={time_limit} onChange={e => setTime_limit(e.target.value)}/>}
+                    {!islimit ? "" : <div style={{width: "100%", display: "flex", alignItems: 'flex-end', gap: '11px'}}><input min="10" max="10000" type="number" value={time_limit} onChange={e => setTime_limit(e.target.value)}/> <h3>минут</h3></div>}
                 </div> : <div><h3>{router.full_time}</h3><h3>{router.walk_time}</h3><h3>{router.length}</h3></div>}    
-            </div>
+            </div>  
             <div className={classes.btns}>
                 {router.state === "editing" ? 
                     [<Button rounded onClick={build_path}><h3>Построить маршрут</h3></Button>] : 
