@@ -29,6 +29,10 @@ const Path = ({hist, ...props}) => {
         .then(data => navigate("/app/map/"))
     }
 
+    function del() {
+        
+    }
+
 
     return (
         <div>
@@ -39,8 +43,9 @@ const Path = ({hist, ...props}) => {
                         {path}
                     </div>
                     <div className={classes.btns}>
-                        <Button rounded empty>Поделиться</Button>
+                        <Button rounded empty><h3>Поделиться</h3></Button>
                         <Button rounded onClick={show_path}><h3>Просмотреть</h3></Button>
+                        <Button rounded style={{backgroundColor: "var(--red)", borderColor: "var(--red)"}}><h3>Удалить</h3></Button>
                     </div>
                 </div>
                 
