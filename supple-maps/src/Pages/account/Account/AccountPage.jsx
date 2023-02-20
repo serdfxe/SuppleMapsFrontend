@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import Block from '../../../components/ui/Block/Block';
-import SideBar from '../../../components/SideBar/SideBar';
-import BodyWrap from '../../../components/BodyWrap/BodyWrap';
-import Side from '../../../components/Side/Side';
+import Page from '../../../Page/Page';
+
+import RandArts from '../../../components/RandArts/RandArts';
+import Content from './Content/Content';
+
 // import Input from '../../../components/ui/Input/Input';
 import api_url from '../../../config';
+import SideBox from '../../SideBox/SideBox';
 
 const Accountpage = ({...props}) => {
     const [user, setUser] = useState({name: null});
@@ -20,15 +22,7 @@ const Accountpage = ({...props}) => {
     }, [props.token]);
 
     return (
-        <BodyWrap>
-            <Side>
-                <SideBar/>
-            </Side>
-                
-            <Block fit>
-                <h1>{user.name}</h1>
-            </Block>            
-        </BodyWrap>
+        <Page side_box={<SideBox token={props.token}/>} sidebar_info={<RandArts amount={3}/>} content={<Content data={user}/>}/>
     );
 };
 

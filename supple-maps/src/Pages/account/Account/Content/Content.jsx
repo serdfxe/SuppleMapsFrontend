@@ -1,41 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import api_url from '../../../config';
-import Path from '../Path/Path';
+import api_url from '../../../../config';
 
-import classes from './SavedPathsList.module.css';
+import classes from './Content.module.css';
 
 import { useNavigate } from 'react-router';
 
+import Block from '../../../../components/ui/Block/Block';
 
 
-const SavedPathsList = ({...props}) => {
+
+const Content = ({data}) => {
     const navigate = useNavigate();
-
-    const [list, setList] = useState([]);
-
-    function update_saved_paths() {
-        fetch(api_url + "/router/saved/", {method: "GET", headers: {
-            Authorization: "Bearer " + props.token,
-            Accept: 'application/json',
-        }})
-        .then(resp => resp.json())
-        .then(data => {
-            console.log("SavedPathsData: ", data)
-
-            setList(
-                data.map((h, i) =>
-                <Path hist={h} token={props.token}/>
-                // <Path poi_list={h.path} image={h.image} len={p.length} full_time={}/>
-            ));
-        })
-    }
-
-
-    window.update_saved_paths = update_saved_paths;
-
-    useEffect(() => {
-        update_saved_paths();
-    }, []);
 
     return (
         <>
@@ -52,13 +27,21 @@ const SavedPathsList = ({...props}) => {
                     </defs>
                 </svg>
 
-                <h1>Сохранёные маршруты</h1>
+                <h1>Личный кабинет</h1>
             </div>
             <div className={classes.wrap}>
-                {list}
+                <Block className={classes.info}>
+                    <img src={require('../../../../img/profile/profile.svg').default} alt="" />
+                    <div className={classes.info_wrap}>
+                        <div>
+                            <h2>Email: </h2>
+                            <h2>{data.email}</h2>
+                        </div>
+                    </div>  
+                </Block>
             </div>
         </>
     );
 };
 
-export default SavedPathsList;
+export default Content;

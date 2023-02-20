@@ -1,0 +1,24 @@
+.stat_wrap {
+    width: -webkit-fil-available;
+
+    display: flex;
+
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info > img {
+    height: 300px;
+}
+
+.logo_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_wrap > img {
+    height: 300px;
+}
+

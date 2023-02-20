@@ -4,9 +4,13 @@ import Page from '../../Page/Page';
 import Block from '../../components/ui/Block/Block';
 import RandArts from '../../components/RandArts/RandArts';
 
-const MainPage = () => {
+import SideBox from '../SideBox/SideBox';
+
+import MainPageContent from './MainPageContent/MainPageContent';
+
+const MainPage = ({...props}) => {
     return (
-        <Page content={<Block>контент</Block>} side_box={<Block>чото</Block>} sidebar_info={<RandArts amount={3} />}/>
+        <Page content={<MainPageContent token={props.token}/>} side_box={<SideBox/>} sidebar_info={<RandArts amount={3} />}/>
     );
 };
 

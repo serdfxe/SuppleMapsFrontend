@@ -1,0 +1,17 @@
+.def {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 11px;
+
+    gap: 11px;
+
+    cursor: default;
+
+    border: 1px solid;
+    border-radius: 11px;
+
+    width: -webkit-fill-available;
+    /* width: 50%; */
+    justify-content: center;
+}   

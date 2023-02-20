@@ -53,7 +53,7 @@ function App() {
               <Route path="app">
                 <Route path="" element={<Navigate to="map" />}/>
                 <Route path="map" element={<MapPage token={token}/>} />
-                <Route path="main" element={<MainPage/>} />
+                <Route path="main" element={<MainPage token={token}/>} />
                 <Route path="account" element={<AccountPage token={token}/>} />
                 <Route path="art" element={<Navigate to="/app/main"/>} />
                 <Route path="art/:art_id" element={<Article token={token}/>} />

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
-import Block from '../../../components/ui/Block/Block';
-import Button from '../../../components/ui/Button/Button';
+import Block from '../../../../components/ui/Block/Block';
+import Button from '../../../../components/ui/Button/Button';
 
-import api_url from '../../../config';
+import api_url from '../../../../config';
 // import PoiInPath from '../../map/MapSide/PoiInPath/PoiInPath';
 
 import classes from './Path.module.css';
@@ -15,29 +15,18 @@ const Path = ({hist, ...props}) => {
 
     const navigate = useNavigate();
 
-    function update(){
+    useEffect(() => {
         setPath(
             hist.path.map((p, i) =>
             <PoiInHist token={props.token} poi_id={p} key={i + "_hist_"}/>
         ));
-    }
-
-    useEffect(() => {
-        update()
     }, []);
 
     function show_path() {
-        fetch(api_url + "/router/loadsaved/" + hist.id, {method: "POST", headers: {
+        fetch(api_url + "/router/loadstatic/" + hist.id, {method: "POST", headers: {
             Authorization: 'Bearer ' + props.token
           }})
         .then(data => navigate("/app/map/"))
-    }
-
-    function del() {
-        fetch(api_url + "/router/delsaved/" + hist.id, {method: "POST", headers: {
-            Authorization: 'Bearer ' + props.token
-          }})
-        .then(data => window.update_saved_paths())
     }
 
 
@@ -46,13 +35,13 @@ const Path = ({hist, ...props}) => {
             <Block style={{flexDirection: "row"}} className={classes.g_wrap}>
                 <img src={hist.image} alt={hist.image} />
                 <div className={classes.info_wrap}>
+                    <h1>{hist.name}</h1>
                     <div className={classes.path_wrap}>
                         {path}
                     </div>
                     <div className={classes.btns}>
-                        <Button rounded empty><h3>Поделиться</h3></Button>
+                        <Button rounded empty>Поделиться</Button>
                         <Button rounded onClick={show_path}><h3>Просмотреть</h3></Button>
-                        <Button rounded onClick={del} style={{backgroundColor: "var(--red)", borderColor: "var(--red)"}}><h3>Удалить</h3></Button>
                     </div>
                 </div>
                 
