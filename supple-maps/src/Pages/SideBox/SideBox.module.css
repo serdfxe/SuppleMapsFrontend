@@ -1,6 +1,8 @@
 .btns {
     width: 100%;
     padding: 29px;
+
+    border-top: 1px solid var(--g3);
 }
 
 .content {

@@ -77,3 +77,15 @@
 }
 
 
+.info_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    width: -webkit-fill-available;
+}
+
+.info_wrap > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
